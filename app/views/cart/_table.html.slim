@@ -1,0 +1,82 @@
+
+
+div[style="background: #ffcc66;    
+            max-width: 700px;
+            text-align:center;
+            margin: auto;
+            border-width: medium;"]
+
+  table.table.table-bordered.table-striped
+
+    thead
+
+      tr
+
+        th Name
+
+        th Quantity
+
+        th Actual Price
+
+        th Total
+
+        th Discount Price
+
+    tbody
+
+    - @cart.orderables.each do |orderable|
+        - product = orderable.product        
+        tr
+         
+          td 
+            h4
+             = product.name
+
+          td
+            h4
+             = orderable.quantity
+
+          td
+            h4
+             = product.price
+
+          td 
+            h4
+             = orderable.quantity*product.price
+
+          td 
+            h4
+              =number_with_precision(orderable.total, precision: 2)
+            
+             
+              
+    td 
+         h3
+            |  Total is&nbsp;
+            u
+            b
+            =number_with_precision(@cart.total , precision: 2)
+                | &nbsp; .rs
+            div 
+            
+            p
+            h3
+                
+                
+                -if @cart.total > 2000
+                    
+                    br
+                    |After applying discount =&nbsp;
+                    u
+                        b
+                        = number_with_precision(@cart.discount_price, precision: 2) 
+                    br
+                    h5
+                        | WOW!!!  you got 10% discount 
+                    br
+    td 
+    td 
+    td
+    td
+                
+  
