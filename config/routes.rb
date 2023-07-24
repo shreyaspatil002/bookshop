@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'cart_pay', to: 'cart#pay'
   get 'all_cart', to: 'cart#index'
   post 'cart/add'
-  # post 'cart/remove'
+  post 'cart/remove'
 
   resources :cart
   resources :products do

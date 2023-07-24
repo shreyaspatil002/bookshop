@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_230_713_053_510) do
+ActiveRecord::Schema.define(version: 20_230_720_100_458) do
   create_table 'active_storage_attachments', force: :cascade do |t|
     t.string 'name', null: false
     t.string 'record_type', null: false
@@ -54,6 +54,11 @@ ActiveRecord::Schema.define(version: 20_230_713_053_510) do
   create_table 'categories', force: :cascade do |t|
     t.string 'name'
     t.string 'code'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+  end
+
+  create_table 'discounts', force: :cascade do |t|
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
