@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-class Discount < ApplicationRecord
+module DiscountHelper
 end

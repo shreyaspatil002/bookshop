@@ -31,33 +31,21 @@
     |  * 
     = orderable.quantity
     |  = 
-    = orderable.quantity*product.price
+    = orderable.total
     |  rs 
     br
-    -if orderable.quantity > 2
-     | After applying discount 5%
-     h3
-      u
-       = number_with_precision((orderable.total), precision: 2)
-       |  rs 
-    -else 
+    -if orderable.quantity > 2 && @cart.apply_discount > orderable.qty_discount
+      | After applying discount 5%
       h3
-       u
-        = number_with_precision((orderable.total), precision: 2)
+        u
+        = number_with_precision((orderable.qty_discount), precision: 2)
         |  rs 
+   
     
     = form_with(url: cart_remove_path) do |f|
       = f.hidden_field :id, value: orderable.id
-
-     
       = f.submit "remove" 
       = link_to "refresh" , cart_path
-
-    
-    / strong
-    /   | Total: 
-    / = number_with_precision(orderable.total, precision: 2) 
-           
-
+     
     br
 

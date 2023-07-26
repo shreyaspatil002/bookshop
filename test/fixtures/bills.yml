@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Orderable: one
+  product: one
+  cart: one
+  customer_name: MyString
+  product_price: 9.99
+  quantity: 1
+  total_product_price: 9.99
+  address: MyText
+  cart_price: 9.99
+  ordered_date: 2023-07-25
+  dilvery_date: 2023-07-25
+
+two:
+  Orderable: two
+  product: two
+  cart: two
+  customer_name: MyString
+  product_price: 9.99
+  quantity: 1
+  total_product_price: 9.99
+  address: MyText
+  cart_price: 9.99
+  ordered_date: 2023-07-25
+  dilvery_date: 2023-07-25

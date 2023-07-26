@@ -3,11 +3,14 @@
 Rails.application.routes.draw do
   # resources :categories
   get 'cart', to: 'cart#show'
-  get 'cart_pay', to: 'cart#pay'
+  # post 'cart_pay', to: 'cart#pay'
   get 'all_cart', to: 'cart#index'
+  get 'invoice', to: 'cart#invoice'
+  post 'cart/pay'
   post 'cart/add'
   post 'cart/remove'
-
+  # post 'bill/add'
+  resources :discounts
   resources :cart
   resources :products do
     resources :reviews
